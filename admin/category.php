@@ -8,7 +8,7 @@
         <?php include 'includes/menubar.php'; ?>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper" style="background-color:#837EE7;">
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
@@ -41,8 +41,8 @@
         }
       ?>
                 <div class="row">
-                    <div class="col-xs-12">
-                        <div class="box">
+                    <div class="col-xs-12 col-lg-12 ">
+                        <div class="box" style="background-color:#FFD856;">
                             <div class="box-header with-border">
                                 <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i
                                         class="fa fa-plus"></i> New</a>
@@ -50,8 +50,8 @@
                             <div>
                                 <table class="table table-bordered">
                                     <thead>
-                                        <th>Category Name</th>
-                                        <th>Tools</th>
+                                        <th class='text-center'>Category Name</th>
+
                                     </thead>
                                     <tbody>
                                         <?php
@@ -63,8 +63,8 @@
                       foreach($stmt as $row){
                         echo "
                           <tr>
-                            <td>".$row['name']."</td>
-                            <td>
+                            <td class='text-center'>".$row['name']."</td>
+                            <td class='text-center'>
                               <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
                               <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
                             </td>
@@ -87,7 +87,7 @@
             </section>
 
         </div>
-        <?php include 'includes/footer.php'; ?>
+
         <?php include 'includes/category_modal.php'; ?>
 
     </div>

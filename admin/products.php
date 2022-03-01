@@ -16,7 +16,7 @@
         <?php include 'includes/menubar.php'; ?>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper" style="background-color:#837EE7;">
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
@@ -51,7 +51,7 @@
       ?>
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="box">
+                        <div class="box" style="background-color:#FFD856;">
                             <div class="box-header with-border">
                                 <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"
                                     id="addproduct"><i class="fa fa-plus"></i> New</a>
@@ -84,12 +84,11 @@
                             <div class="">
                                 <table class="table table-bordered">
                                     <thead>
-                                        <th>Name</th>
-                                        <th>Photo</th>
-                                        <th>Description</th>
-                                        <th>Price</th>
-                                        <th>Views Today</th>
-                                        <th>Tools</th>
+                                        <th class='text-center'>Name</th>
+                                        <th class='text-center'>Photo</th>
+                                        <th class='text-center'>Description</th>
+                                        <th class='text-center'>Price</th>
+
                                     </thead>
                                     <tbody>
                                         <?php
@@ -105,14 +104,14 @@
                         echo "
                           <tr>
                             <td>".$row['name']."</td>
-                            <td>
+                            <td class='text-center'>
                               <img src='".$image."' height='30px' width='30px'>
                               <span class='pull-right'><a href='#edit_photo' class='photo' data-toggle='modal' data-id='".$row['id']."'><i class='fa fa-edit'></i></a></span>
                             </td>
-                            <td><a href='#description' data-toggle='modal' class='btn btn-info btn-sm btn-flat desc' data-id='".$row['id']."'><i class='fa fa-search'></i> View</a></td>
-                            <td>&#36; ".number_format($row['price'], 2)."</td>
-                            <td>".$counter."</td>
-                            <td>
+                            <td class='text-center'><a href='#description' data-toggle='modal' class='btn btn-info btn-sm btn-flat desc' data-id='".$row['id']."'><i class='fa fa-search'></i> View</a></td>
+                            <td class='text-center'>&#36; ".number_format($row['price'], 2)."</td>
+                       
+                            <td class='text-center'>
                               <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
                               <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
                             </td>
@@ -135,7 +134,7 @@
             </section>
 
         </div>
-        <?php include 'includes/footer.php'; ?>
+
         <?php include 'includes/products_modal.php'; ?>
         <?php include 'includes/products_modal2.php'; ?>
 

@@ -12,7 +12,7 @@
         <?php include 'includes/menubar.php'; ?>
 
 
-        <div class="content-wrapper">
+        <div class="content-wrapper" style="background-color:#837EE7;">
 
             <section class="content-header">
                 <h1>
@@ -47,11 +47,35 @@
       ?>
 
                 <div class="row">
+                    <div class="col-lg-4 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box" style="background-color:orange;">
+                            <div class="inner">
+                                <?php
+                $stmt = $conn->prepare("SELECT * FROM details LEFT JOIN products ON products.id=details.product_id");
+                $stmt->execute();
 
+                $total = 0;
+                foreach($stmt as $srow){
+                  $subtotal = $srow['price']*$srow['quantity'];
+                  $total += $subtotal;
+                }
 
-                    <div class="col-lg-6 col-xs-6">
-
-                        <div class="small-box bg-green">
+                echo "<h3>&#36; ".number_format_short($total, 2)."</h3>";
+              ?>
+                                <p>Total Sales</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-shopping-cart"></i>
+                            </div>
+                            <a href="sales.php" class="small-box-footer">More info <i
+                                    class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-4 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box" style="background-color:#42FB00;">
                             <div class="inner">
                                 <?php
                 $stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM products");
@@ -70,10 +94,10 @@
                                     class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
-
-                    <div class="col-lg-6 col-xs-6">
-
-                        <div class="small-box bg-yellow">
+                    <!-- ./col -->
+                    <div class="col-lg-4 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box" style="background-color:red;">
                             <div class="inner">
                                 <?php
                 $stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM users");
@@ -93,13 +117,11 @@
                         </div>
                     </div>
 
-                </div>
-
 
             </section>
 
         </div>
-        <?php include 'includes/footer.php'; ?>
+
 
     </div>
 

@@ -45,17 +45,20 @@
 						    	$inc = ($inc == 3) ? 1 : $inc + 1;
 	       						if($inc == 1) echo "<div class='row'>";
 	       						echo "
-	       							<div class='col-lg-3'>
-	       								<div class='box box-solid'>
+	       							<div class='col-lg-3 full-box'>
+	       								<a href='product.php?product=".$row['slug']."'>
+										   <div class='box box-solid' >
 		       								<div class='box-body prod-body'>
-		       									<img src='".$image."' width='100%' height='230px' class='thumbnail'>
-		       									<h5><a href='product.php?product=".$row['slug']."'>".$row['name']."</a></h5>
+		       									<img src='".$image."' width='100%' height='200px' class='thumbnail'>
+		       									<h4><a class='product-name' >".$row['name']."</a></h4>
 		       								</div>
-		       								<div class='box-footer'>
-		       									<b>&#36; ".number_format($row['price'], 2)."</b>
+		       								<div class='box-footer' style='color:black;text-align: center;'>
+		       									<b>$".($row['price'])."</b>
 		       								</div>
 	       								</div>
+										</a>
 	       							</div>
+									   
 	       						";
 	       						if($inc == 4) echo "</div>";
 						    }
