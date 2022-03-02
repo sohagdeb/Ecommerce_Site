@@ -10,11 +10,11 @@
                 <h1>Products</h1>
                 <div class="col-md-6">
                     <ul class="pages">
-                        <li><a href="#">Laptop</a></li>
-                        <li><a href="#">Camera</a></li>
-                        <li><a href="#">Smart Phone</a></li>
-                        <li><a href="#">Tablet</a></li>
-                        <li><a href="#">Desktop</a></li>
+                        <li><a href="/STAREDGE/category.php?category=laptops">Laptop</a></li>
+                        <li><a href="/STAREDGE/category.php?category=camera">Camera</a></li>
+                        <li><a href="/STAREDGE/category.php?category=phone">Smart Phone</a></li>
+                        <li><a href="/STAREDGE/category.php?category=tablets">Tablet</a></li>
+                        <li><a href="/STAREDGE/category.php?category=desktop-pc">Desktop</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6">

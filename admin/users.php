@@ -49,13 +49,14 @@
                                         class="fa fa-plus"></i> New</a>
                             </div>
                             <div class="box-body">
-                                <table class="table table-bordered">
+                                <table id="example1" class="table table-bordered">
                                     <thead>
-                                        <th class='text-center'>Photo</th>
-                                        <th class='text-center'>Email</th>
-                                        <th class='text-center'>Name</th>
-                                        <th class='text-center'>Status</th>
+                                        <th>Photo</th>
+                                        <th>Email</th>
+                                        <th>Name</th>
+                                        <th>Status</th>
 
+                                        <th>Tools</th>
                                     </thead>
                                     <tbody>
                                         <?php
@@ -66,22 +67,22 @@
                       $stmt->execute(['type'=>0]);
                       foreach($stmt as $row){
                         $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
-                        $status = ($row['status']) ? '<span class="label label-success">Active</span>' : '<span class="label label-danger">Not Active</span>';
+                        $status = ($row['status']) ? '<span class="label label-success">active</span>' : '<span class="label label-danger">not verified</span>';
                         $active = (!$row['status']) ? '<span class="pull-right"><a href="#activate" class="status" data-toggle="modal" data-id="'.$row['id'].'">Active</a></span>' : '';
                         echo "
                           <tr>
-                            <td class='text-center'>
+                            <td>
                               <img src='".$image."' height='30px' width='30px'>
                               <span class='pull-right'><a href='#edit_photo' class='photo' data-toggle='modal' data-id='".$row['id']."'><i class='fa fa-edit'></i></a></span>
                             </td>
-                            <td class='text-center'>".$row['email']."</td>
-                            <td class='text-center'>".$row['firstname'].' '.$row['lastname']."</td>
-                            <td class='text-center'>
+                            <td>".$row['email']."</td>
+                            <td>".$row['firstname'].' '.$row['lastname']."</td>
+                            <td>
                               ".$status."
                               ".$active."
                             </td>
-                            
-                            <td class='text-center'>
+                          
+                            <td>
                               <a href='cart.php?user=".$row['id']."' class='btn btn-info btn-sm btn-flat'><i class='fa fa-search'></i> Cart</a>
                               <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
                               <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
@@ -105,7 +106,7 @@
             </section>
 
         </div>
-
+        <?php include 'includes/footer.php'; ?>
         <?php include 'includes/users_modal.php'; ?>
 
     </div>

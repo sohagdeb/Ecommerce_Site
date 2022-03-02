@@ -37,15 +37,17 @@
 	       						if($inc == 1) echo "<div class='row'>";
 	       						echo "
 	       							<div class='col-sm-4'>
+									   <a href='product.php?product=".$row['slug']."'>
 	       								<div class='box box-solid'>
 		       								<div class='box-body prod-body'>
 		       									<img src='".$image."' width='100%' height='230px' class='thumbnail'>
-		       									<h5><a href='product.php?product=".$row['slug']."'>".$highlighted."</a></h5>
+		       									<h5><a class='product-name' href='product.php?product=".$row['slug']."'>".$highlighted."</a></h5>
 		       								</div>
-		       								<div class='box-footer'>
-		       									<b>&#36; ".number_format($row['price'], 2)."</b>
+		       								<div class='box-footer' style='color:black;text-align: center;'>
+		       									<b>$ ".($row['price'])."</b>
 		       								</div>
 	       								</div>
+										   </a>
 	       							</div>
 	       						";
 	       						if($inc == 3) echo "</div>";

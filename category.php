@@ -50,7 +50,7 @@
 										   <div class='box box-solid' >
 		       								<div class='box-body prod-body'>
 		       									<img src='".$image."' width='100%' height='200px' class='thumbnail'>
-		       									<h4><a class='product-name' >".$row['name']."</a></h4>
+		       									<h4><a href='product.php?product=".$row['slug']."' class='product-name' >".$row['name']."</a></h4>
 		       								</div>
 		       								<div class='box-footer' style='color:black;text-align: center;'>
 		       									<b>$".($row['price'])."</b>
