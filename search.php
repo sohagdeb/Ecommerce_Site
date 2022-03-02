@@ -12,7 +12,7 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <div class="col-sm-9">
+                        <div class="col-sm-9 col-lg-12">
                             <?php
 	       			
 	       			$conn = $pdo->open();
@@ -36,7 +36,7 @@
 						    	$inc = ($inc == 3) ? 1 : $inc + 1;
 	       						if($inc == 1) echo "<div class='row'>";
 	       						echo "
-	       							<div class='col-sm-4'>
+	       							<div class='col-lg-3'>
 									   <a href='product.php?product=".$row['slug']."'>
 	       								<div class='box box-solid'>
 		       								<div class='box-body prod-body'>
@@ -50,7 +50,7 @@
 										   </a>
 	       							</div>
 	       						";
-	       						if($inc == 3) echo "</div>";
+	       						if($inc == 4) echo "</div>";
 						    }
 						    if($inc == 1) echo "<div class='col-sm-4'></div><div class='col-sm-4'></div></div>"; 
 							if($inc == 2) echo "<div class='col-sm-4'></div></div>";
